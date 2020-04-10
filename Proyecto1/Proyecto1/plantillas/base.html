@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>
+        {% block title %}
+        <!--Significa que esto va a cambiar-->
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+   
+
+    <h1 style="background-color:rgb(9, 78, 87); color: white; text-align: center;"> Dulce Capricho</h1>
+
+    {% include "superior/barra.html"%}
+    
+    <h3>Helados de todos los sabores</h3>
+    {% block content %}
+    {% endblock %}
+
+    <p style="background-color:rgb(9, 78, 87); color: white; text-align: center;">
+        Llamanos y pide el tuyo
+    </p>
+
+</body>
+
+</html>

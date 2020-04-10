@@ -1,0 +1,42 @@
+<html>
+{# tambien se puede comentar así#}
+{% comment %}
+para hacerlo en varias lineas
+{% endcomment%}
+
+<body>
+    <!--Acá meti la otra platilla -->
+    {% include "superior/barra.html"%} 
+    <h2 style="color:blue">
+        Bienvenidos a Helados dulce capricho
+    </h2>
+    <!--upper para poner todo en mayuscula-->
+    {% if nombre_persona == 'violeta'%}
+    <p>ella es la due&ntilde;a</p>
+    {% else %}
+    <p>El es otro propietario</p>
+    {% endif %}
+    <p>El due&ntilde;o del negocio es:{{nombre_persona|upper}} {{apellido_persona}}</p>
+    <p>
+        El d&iacute;a es:{{momento_actual.day}}/{{momento_actual.month}}/{{momento_actual.year}}
+        <!--para corregir las tildes &iacute;-->
+    </p>
+    <p><strong>Temas del curso</strong></p>
+    <p>
+        <ul>
+            {% if temas %}
+            <!--Verica que temas no sea vacio-->
+            <!--lista desordenada-->
+            {% for elTema in temas %}
+            <!--Recorra todos los elementos de la lista y cada uno llamelo el tema-->
+            <li>{{elTema|first}}</li> <!--  <P>{{elTema}}</P> Para poner uno debajo del otro-->
+            {% endfor %}
+            {% else %}
+            <p>No hay elementos para mostrar</p>
+            {% endif %}
+
+        </ul>
+    </p>
+</body>
+
+</html>
