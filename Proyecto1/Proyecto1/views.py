@@ -35,7 +35,7 @@ def cursoCSS(request):
     return render(request,"cursoCss.html")
 
 def despedida(request):
-    return HttpResponse("Que tenga un buen dia")
+    return HttpResponse("Ensayando gitHub")
 
 
 def dameFecha(request): # marcador de posicion %s
