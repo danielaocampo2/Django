@@ -4,9 +4,12 @@ from django.db import models
 
 class Cliente(models.Model): # primera tabla
     nombre=models.CharField(max_length=30) # tipo -- almacenar tecto, max length .. longitud , maximo 30 caracteres
-    direccion=models.CharField(max_length=50)
-    email=models.EmailField() # email validos
+    direccion=models.CharField(max_length=50, verbose_name="la dirección") # verbos_name cambia el nombre en el panel
+    email=models.EmailField(blank=True,null=True) # email validos
     tfno=models.CharField(max_length=7)
+
+    def __str__(self):
+        return self.nombre  # lo que nos va aparecer
 
 class Articulos(models.Model):
     nombre=models.CharField(max_length=30)

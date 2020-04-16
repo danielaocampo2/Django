@@ -1,0 +1,28 @@
+<html>
+
+<body>
+
+    <p>Estás buscando: <strong>{{query}}</strong></p>
+
+    {% if articulos %}
+    <!--Para controlar que si la encontro o si esta vacia-->
+    <p>Artículos encoenttrados: {{articulos|length}} articulos</p>
+    <!--para ver cuantos encontro-->
+    <ul>
+        <!--Lista desordenada-->
+        {% for articulo in articulos%} 
+        <li>
+            <!--para que ponga cada elemento con punto en el caso de que se tenga varios-->
+            {{articulo.nombre}} &nbsp; {{articulo.seccion}} &nbsp; {{articulo.precio}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No esta el artículo</p>
+    {% endif %}
+</body>
+
+
+
+
+</html>
